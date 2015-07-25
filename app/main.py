@@ -15,26 +15,29 @@ app.config.setdefault('TWEEPY_ACCESS_TOKEN_SECRET', '3tfg6G4clDY42ie6wYekxf77xHG
 
 @app.route('/')
 def index():
-    RSS_URLS = [
-        'http://blog.counter-strike.net/index.php/feed/',
-        'http://blog.dota2.com/feed/',
-        'http://www.teamfortress.com/rss.xml',
-        'http://www.sourcefilmmaker.com/rss.xml'
-        ]
+    ##### RSS Feed Urls:
+    CSGO_URL = ['http://blog.counter-strike.net/index.php/feed/']
 
-    entries = []
-    for url in RSS_URLS:
-        entries.extend(feedparser.parse(url).entries)
+    DOTA_URL = ['http://blog.dota2.com/feed/']
 
-    entries_sorted = sorted(
-        entries,
+    TF2_URL = ['http://www.teamfortress.com/rss.xml']
+
+    SOURCEFILM_URL = ['http://www.sourcefilmmaker.com/rss.xml']
+
+    ##### CSGO Feed
+    csgo_entries = []
+    for url in CSGO_URL:
+        csgo_entries.extend(feedparser.parse(url).entries)
+
+    csgo_entries_sorted = sorted(
+        csgo_entries,
         key=lambda e: e.published_parsed,
         reverse=True)
 
 ##### ===>
 ##### ===>
 
-    return render_template('index.html', entries=entries_sorted)
+    return render_template('index.html', entries=csgo_entries_sorted)
 
 if __name__ == '__main__':
     app.run()
