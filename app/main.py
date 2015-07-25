@@ -31,10 +31,10 @@ def index():
         key=lambda e: e.published_parsed,
         reverse=True)
 
-    return render_template(
-        'index.html',
-        entries=entries_sorted
-        )
+##### ===>
+##### ===>
+
+    return render_template('index.html', entries=entries_sorted)
 
 if __name__ == '__main__':
     app.run()
