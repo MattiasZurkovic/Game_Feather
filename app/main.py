@@ -19,6 +19,7 @@ def index():
         'http://blog.counter-strike.net/index.php/feed/',
         'http://blog.dota2.com/feed/',
         'http://www.teamfortress.com/rss.xml',
+        'http://www.sourcefilmmaker.com/rss.xml'
         ]
 
     entries = []
