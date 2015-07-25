@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Game Feather</title>
+  </head>
+  <body>
+
+    <h2>Game Feather</h2>
+    <p>
+      Welcome to Game Feather. We are an aggregator site for the news of video games. Currently we are under development and only have news from the main Valve games.
+        <li>{{ tweets }}</li>
+    </p>
+
+  {% block content %}
+    <div class="row">
+    {% for e in entries %}
+        <div class="col-md-4 col-lg-3">
+            <h1><a href="{{ e.link }}">{{ e.title }}</a></h1>
+            <h5>Published on: {{ e.published }}</h5>
+            {% for content in e.content %}
+                <p>{{ content.value|safe }}</p>
+            {% else %}
+                <p>{{ e.summary_detail.value|safe }}</p>
+            {% endfor %}
+        </div>
+    {% endfor %}
+    </div>
+{% endblock %}
+
+  </body>
+</html>
