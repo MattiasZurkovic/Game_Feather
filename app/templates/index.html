@@ -21,23 +21,5 @@
       Welcome to Game Feather. We are an aggregator site for the news of video games. Currently we are under development and only have news from the main Valve games.
     </p>
 
-  <div id="valve_block">
-  {% block content %}
-    <div class="row">
-    {% for e in entries %}
-        <div class="col-md-4 col-lg-3">
-            <h1><a href="{{ e.link }}">{{ e.title }}</a></h1>
-            <h5>published on: {{ e.published }}</h5>
-            {% for content in e.content %}
-                <p>{{ content.value|safe }}</p>
-            {% else %}
-                <p>{{ e.summary_detail.value|safe }}</p>
-            {% endfor %}
-        </div>
-    {% endfor %}
-    </div>
-  {% endblock %}
-  </div>
-
   </body>
 </html>
