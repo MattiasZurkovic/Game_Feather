@@ -15,7 +15,8 @@ def index():
 @app.route('/valve')
 def valve():
     ##### RSS Feed Urls:
-    VALVE_URLS = ['http://blog.counter-strike.net/index.php/feed/',  # CSGO URL
+    VALVE_URLS = ['http://store.steampowered.com/feeds/news.xml'     # Steam URL
+                  'http://blog.counter-strike.net/index.php/feed/',  # CSGO URL
                   'http://blog.dota2.com/feed/',                     # DOTA URL
                   'http://www.teamfortress.com/rss.xml',             # TF2 URL
                   'http://www.sourcefilmmaker.com/rss.xml'           # Source Film Maker URL
