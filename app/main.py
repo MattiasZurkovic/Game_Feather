@@ -27,9 +27,10 @@ def valve():
     for url in VALVE_URLS:
         valve_entries.extend(feedparser.parse(url).entries)
 
-    valve_entries_sorted = sorted(valve_entries, key=lambda e: e.published_parsed, reverse=True)
+    valve_entries_sorted_reverse = sorted(valve_entries, key=lambda e: e.published_parsed, reverse=True)
+    valve_entries_sorted_oldest = sorted(valve_entries, key=lambda e: e.published_parsed, reverse=False)
 
-    return render_template('valve.html', entries=valve_entries_sorted)
+    return render_template('valve.html', entries=valve_entries_sorted_reverse, reg_entries=valve_entries_sorted_oldest)
 
 if __name__ == '__main__':
     app.run()

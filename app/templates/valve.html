@@ -22,6 +22,11 @@
   <body>
 
     <h2>Game Feather - Valve</h2>
+
+    <ul>
+      <li><a href="/valve">valve</a></li>
+    </ul>
+
     <p>
       All updates and news from Valve and her games.
     </p>
@@ -31,13 +36,8 @@
     <div class="row">
     {% for e in entries %}
         <div class="col-md-4 col-lg-3">
-            <h1><a href="{{ e.link }}">{{ e.title }}</a></h1>
+            <h2><a href="{{ e.link }}">{{ e.title }}</a></h2>
             <h5>published on: {{ e.published }}</h5>
-            {% for content in e.content %}
-                <p>{{ content.value|safe }}</p>
-            {% else %}
-                <p>{{ e.summary_detail.value|safe }}</p>
-            {% endfor %}
         </div>
     {% endfor %}
     </div>
