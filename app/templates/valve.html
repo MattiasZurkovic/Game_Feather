@@ -3,7 +3,11 @@
   <head>
     <meta charset="utf-8">
     <title>Game Feather</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+    </script>
   </head>
 
   <style>
@@ -27,6 +31,22 @@
       <li><a href="/">all</a></li>
       <li><a href="/valve">valve</a></li>
     </ul>
+
+    <div class="sort">
+
+      sort by: <div data-role="collapsible">
+
+    <h4>game</h4>
+    <ul data-role="listview">
+      <li><a href="#">Counter-Strike: Global Offensive</a></li>
+      <li><a href="#">DOTA 2</a></li>
+      <li><a href="#">Team Fortress 2</a></li>
+
+    </ul>
+    </div>
+
+    <a href="#">newest posts</a> <a href="#">oldest posts</a>
+    </div>
 
     <p>
       All updates and news from Valve and her games.
